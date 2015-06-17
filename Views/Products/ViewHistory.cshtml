@@ -1,0 +1,36 @@
+﻿@model List<MvcApplication4.Models.History>
+@{
+    Layout = "~/views/Shared/_LAdmin.cshtml";
+}
+<div class="center_content12" style="display:table-cell; padding-left:200px ;width:585px;float:left;padding:5px 10px;">
+    <div class="title_bar" style=" font-weight:bolder; color:firebrick; text-align:center; opacity:0.4"><h1>View Orders</h1></div>
+
+<table border="1">
+    <tr>
+   
+        <td>Customer ID</td>
+        <td>Customer Name</td>
+        <td>Product ID</td>
+       
+        <td>Date</td>
+        </tr>
+    @foreach(var x in Model)
+    { 
+    
+        <tr>
+        
+            @*<td><img src="@Url.Content("~/Images/uploads/"+x.Path)" width="70" height="70" alt="" /></td>*@
+            <td>@x.Cid</td>
+            <td> luci</td>
+            <td>@x.Pid</td>
+            <td>@x.Date</td>
+
+            <td>
+                <a href="/Products/DeleteOrder/@x.Id" style="color:rgb(19, 18, 18)">Delivered</a>
+                <a href="/Products/DeliverOrder/@x.Id"style="color:rgb(19, 18, 18)">Delete</a>
+            </td>
+        </tr>
+    }
+    </table>
+   <label><strong>@TempData["message"]</strong></label>
+    </div>

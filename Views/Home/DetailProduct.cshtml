@@ -1,0 +1,35 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //Layout = null;
+}
+@model MvcApplication4.Models.Product
+
+
+<div class="center_content">
+    <div class="center_title_bar">@Model.Name</div>
+    <div class="prod_box_big">
+        <div class="top_prod_box_big"></div>
+        <div class="center_prod_box_big">
+            <div class="product_img_big">
+                <a href="@Url.Content("~/Images/uploads/img_"+Model.Path+"_0.jpg")" title="header=[@Model.Name] body=[&nbsp;] fade=[on]"><img src="@Url.Content("~/Images/uploads/img_"+Model.Path+"_0.jpg")" alt="" border="0" height="300" width="300" /></a>
+                <div class="thumbs"> <a href="@Url.Content("~/Images/uploads/img_"+Model.Path+"_1.jpg")" title="header=[@Model.Name] body=[&nbsp;] fade=[on]"><img src="@Url.Content("~/Images/uploads/img_"+Model.Path+"_1.jpg")"  alt="" border="0" height="50" width="50" /></a> <a href="@Url.Content("~/Images/uploads/img_"+Model.Path+"_2.jpg")" title="header=[@Model.Name] body=[&nbsp;] fade=[on]"><img src="@Url.Content("~/Images/uploads/img_"+Model.Path+"_2.jpg")" alt="" border="0" height="50" width="50" /></a> <a href="@Url.Content("~/Images/uploads/img_"+Model.Path+"_3.jpg")" title="header=[@Model.Name] body=[&nbsp;] fade=[on]"><img src="@Url.Content("~/Images/uploads/img_"+Model.Path+"_3.jpg")" alt="" border="0" height="50" width="50" /></a> </div>
+            </div>
+           
+            <div class="details_big_box">
+                 <br />
+            <br />
+                <div class="product_title_big">@Model.Name</div>
+                <div class="specifications">
+                    Category: <span class="blue">@Model.Category1</span><br />
+                    Brand: <span class="blue">@Model.Brand1</span><br />
+                    Description: <span class="blue">@Model.Description</span><br />
+                    Price: <span class="blue">@Model.Price</span><br />
+                </div>
+                <div class="prod_price_big"><span class="reduce">Rs.@(Model.Price+40)</span> <span class="price">Rs.@Model.Price</span></div>
+                <br /><br /><a href="/Account/SignIn" class="addtocart" style="border:solid;background-color:firebrick;color:white;border-radius:5px;border-color:firebrick; width:150px; text-align:justify">Add to Cart</a>
+            </div>
+        </div>
+        <div class="bottom_prod_box_big"></div>
+    </div>
+    </div>
+

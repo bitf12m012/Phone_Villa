@@ -1,0 +1,42 @@
+﻿@model List<MvcApplication4.Models.Product>
+@{
+    Layout = "~/views/Shared/_LAdmin.cshtml";
+}
+<div class="center_content12" style="padding-left:50px ;width:585px;float:left;padding:5px 10px;">
+<table border="1">
+    <tr>
+        <td>Picture 1</td>
+        <td>Picture 2</td>
+        <td>Picture 3</td>
+        <td>Picture 4</td>
+        <td>Name</td>
+        <td>Category</td>
+        <td>Brand</td>
+        <td>Description</td>
+        <td>Price $</td>
+        </tr>
+    @foreach(var x in Model)
+    { 
+    
+        <tr>
+                    <td><img src="@Url.Content("~/Images/uploads/img_"+x.Path+"_0.jpg")" width="70" height="70" alt="" /></td>
+                        <td><img src="@Url.Content("~/Images/uploads/img_"+x.Path+"_1.jpg")" width="70" height="70" alt="" /></td>
+
+            <td><img src="@Url.Content("~/Images/uploads/img_"+x.Path+"_2.jpg")" width="70" height="70" alt="" /></td>
+                        <td><img src="@Url.Content("~/Images/uploads/img_"+x.Path+"_3.jpg")" width="70" height="70" alt="" /></td>
+
+            <td>@x.Name</td>
+            <td>@x.Category1</td>
+            <td>@x.Brand1</td>
+            <td>@x.Description</td>
+        
+            <td>@x.Price</td>
+
+            <td>
+                <a href="/Products/Update/@x.Id" style="color:rgb(19, 18, 18)">Update</a>
+                <a href="/Products/Delete/@x.Id"style="color:rgb(19, 18, 18)">Delete</a>
+            </td>
+        </tr>
+    }
+    </table>
+    </div>

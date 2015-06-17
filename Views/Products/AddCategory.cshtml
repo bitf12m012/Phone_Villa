@@ -1,0 +1,28 @@
+﻿@model MvcApplication4.Models.Category
+
+@{
+    Layout = "~/views/Shared/_LAdmin.cshtml";
+}
+<div class="center_content12" style="display:table-cell; padding-left:200px ;width:585px;float:left;padding:5px 10px;">
+    <div class="title_bar" style=" font-weight:bolder; color:firebrick; text-align:center; opacity:0.4"><h1>Add Category</h1></div>
+
+    <div class="center_div center_div center_content">
+
+        <div class="form_row center_div">
+            <form action="/Products/saveCtegory" method="post">
+                <table>
+                    <tr>
+                        <td><label class="contact"><strong>Category Name:</strong></label></td>
+                        <td><input type="text" class="contact_input" name="Name" required /></td>
+                    </tr>
+                    <tr>
+                        <td><button style=" margin:auto" type="submit" value="Add" onclick="Submit">Add</button></td>
+                    </tr>
+                </table>
+            </form>
+            <label><strong>@TempData["message"]</strong></label>
+        </div>
+
+    </div>
+</div>
+<!-- end of center content -->

@@ -1,0 +1,129 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Phone Villa</title>
+     <link rel="stylesheet" type="text/css" href="~/Content/bootsrap.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/style.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/iecss.css" />
+    <script src="~/Scripts/jquery-1.8.2.js"></script>
+    <script type="text/javascript" src="~/Scripts/boxOver.js"></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body style="background-color:navajowhite" >
+    <div id="main_container" >
+
+        <div class="top_bar" style="border-radius:5px">
+            <div class="top_search">
+                 
+
+
+                <form method="post" action="/Home/SearchProduct">
+                    <div class="search_text"><a href="#">Search by Name</a></div>
+                    <input type="text" class="search_input" name="search" style="border-radius:5px"/>
+                    <input type="image" src="~/Images/search.gif" class="search_bt" />
+                </form>
+            </div>
+            
+            <div class="languages">
+                <div class="lang_text"><a href="/Admin/AdminLogin" style="color:black">Admin Panel</a></div>
+                
+            </div>
+        </div>
+        <hr />
+        <div id="header">
+            <div class="ofterw_content">
+                <div class="oferta_img"> <img src="~/Images/slider1.gif"alt=""/></div>
+            </div>
+            <!-- end of oferte_content-->
+        </div>
+        <div id="main_content" style="border-radius:5px">
+            <div id="menu_tab" style="border-radius:5px">
+                <div class="left_menu_corner" style="border-radius:5px"></div>
+                <ul class="menu" style="background-color: firebrick;border-radius:5px ">
+                    <li class="divider"> </li>
+                    <li>@Html.ActionLink("Home", "index", "Home", null, new { @class = "nav1" })</li>
+                    <li class="divider"></li>
+                    <li>@Html.ActionLink("Shipping", "Shippinginfo", "Info", null, new { @class = "nav5" })</li>
+                    <li class="divider"></li>
+                    <li>@Html.ActionLink("Contact Us", "contact", "Home", null, new { @class = "nav6" })</li>
+                    <li class="divider"></li>
+                    <li>@Html.ActionLink("Register", "Signup", "Account",null ,new { @class="nav4"})</li>
+                    
+                    <li class="divider"></li>
+                    <li>@Html.ActionLink("Sign In", "SignIn", "Account", null, new { @class = "nav4" })</li>
+                    <!--<li><a href="/Account/SignIn" class="nav4">Sign In</a></li>-->
+                    <li class="divider"></li>
+                </ul>
+                <div class="right_menu_corner"></div>
+            </div>
+            <!-- end of menu tab -->
+          
+            <hr /> 
+            <div class="left_content">
+                <div class="title_box" style="background-color:firebrick ; border-radius:5px;">Search By Brands</div>
+                
+                 <form method="post" action="~/Home/BrandDetails">
+                    <ul class="left_menu">
+                        <hr /><li class="even"><input style=" font-family:'Arial Rounded MT'; width: 200px; border: ridge; background-image: url(~/Image/menu_title_bg.gif);" name="Submit" type="Submit" value="Iphone" /></li><hr />
+                        <li class="odd"><input style=" font-family:'Arial Rounded MT';width: 200px; background-image: url(~/Image/menu_title_bg.gif);" class="even" name="Submit" type="Submit" value="Samsung" /></li><hr />
+                        <li class="even"><input style=" font-family:'Arial Rounded MT';width: 200px; border: ridge; background-image: url(~/Image/menu_title_bg.gif);" class="odd" name="Submit" type="Submit" value="QMobile" /></li><hr />
+                        <li class="odd"><input style=" font-family:'Arial Rounded MT';width:200px; background-image: url(~/Image/menu_title_bg.gif) " class="even" name="Submit" type="Submit" value="LG" /></li><hr />
+                        <li class="even"><input style="font-family:'Arial Rounded MT';width: 200px; border: ridge; background-image: url(~/Image/menu_title_bg.gif);" class="odd" name="Submit" type="Submit" value="Nokia" /></li><hr />
+                        <li class="odd"><input style="font-family:'Arial Rounded MT';width:200px; background-image: url(~/Image/menu_title_bg.gif) " class="odd" name="Submit" type="Submit" value="Huawei" /></li><hr />
+                        <li class="even"><input style="font-family:'Arial Rounded MT';width: 200px; border: ridge; background-image: url(~/Image/menu_title_bg.gif);" class="even" name="Submit" type="Submit" value="HTC" /></li><hr />
+                        
+                    </ul>
+                    </form>
+               
+                <div class="title_box" style="background-color:firebrick">Search By Price</div>
+                <div class="border_box">
+                     <form method="post" action="/Home/SearchPrice">
+                    <input type="text" name="submit" class="newsletter_input"  />
+              </form>
+                    <a href="#" class="join">Maximum Price U have</a>
+                </div>
+              <!-- Price -->
+
+              <div class="title_box" style="background-color:firebrick;border-radius:5px;">Search By Catagories</div>
+               <form id="Cat" name="Cat" action="~/Home/CategoryDetail" method="post">
+                <ul class="left_menu" id="Cat"  >
+                    <hr /><li class="even"><input style=" font-family:'Arial Rounded MT';color:black;width:195px; border:ridge ;background-image: url(~/Image/menu_title_bg.gif) " name="Submit" type="Submit" value="IOS"/></li><hr />
+                    <li class ="odd"><input style="font-family:'Arial Rounded MT';color:black;width: 195px; background-image: url(~/Image/menu_title_bg.gif);" class="even" name="Submit" type="Submit" value="Android" /></li><hr />
+                    <li class="even"><input style="font-family:'Arial Rounded MT';color:black;width: 195px; border:ridge; background-image: url(~/Image/menu_title_bg.gif);" class="odd" name="Submit" type="Submit" value="Windows" /></li><hr />
+                    <li class="odd"><input style="font-family:'Arial Rounded MT';color:black;width: 195px; background-image: url(~/Image/menu_title_bg.gif);" class="even" name="Submit" type="Submit" value="Qwerty" /></li><hr />
+                    <li class="even"><input style="font-family:'Arial Rounded MT';color:black;width: 195px; border:ridge; background-image: url(~/Image/menu_title_bg.gif);" class="odd" name="Submit" type="Submit" value="Sanbiums" /></li><hr />
+                </ul>
+                    </form>
+                
+            </div>
+            <!-- end of left content -->
+            @RenderBody()
+
+
+           
+               
+                
+               
+               
+            <!-- end of right content -->
+        </div>
+        <!-- end of main content -->
+        <div class="footer" style="background-color:rgb(240, 197, 132) ; opacity:0.5">
+            <div class="left_footer"> </div>
+            <div class="center_footer">
+                bitf12m012. All Rights Reserved 2015<br />
+               
+               @* <img src="~/images/payment.gif" alt="" />*@
+                
+            </div>
+        </div>
+    </div>
+    <!-- end of main_container -->
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

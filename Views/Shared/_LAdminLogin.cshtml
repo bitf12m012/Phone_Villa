@@ -1,0 +1,53 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Phones Villa</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/style.css" />
+    <script src="~/Scripts/jquery-1.8.2.js"></script>
+    <script type="text/javascript" src="~/Scripts/boxOver.js"></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body style="background-color:navajowhite">
+    <div id="main_container">
+        <div class="top_bar">
+        </div>
+        <div id="header">
+            <div id="logo"> <h1 style="font-family:'Snap ITC';font-size:xx-large;color:firebrick"> Phone Villa</h1></div>
+            
+        </div>
+        <div id="main_content">
+            <div id="menu_tab">
+                <div class="left_menu_corner"></div>
+                
+                <div class="right_menu_corner"></div>
+            </div>
+            <!-- end of menu tab -->
+            <div style="display:table-row">
+            
+            <div class="left_content" style="display:table-cell">
+                <div class="title_box" style="display:table-cell">Admin Functions</div>
+                    
+
+            <!-- end of left content -->
+            </div>
+            @RenderBody()
+                </div>
+        <!-- end of main content -->
+        <div class="footer" style="background-color:rgb(240, 197, 132) ; opacity:0.5">
+            <div class="left_footer">  </div>
+            <div class="center_footer">
+                bitf12m012. All Rights Reserved 2015<br />
+                
+                @*<img src="~/images/payment.gif" alt="" />*@
+            </div>
+        </div>
+    </div>
+        </div>
+    <!-- end of main_container -->
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,47 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+    //Layout = null;
+}
+@model MvcApplication4.Models.Product
+
+<div class="center_content">
+    <div class="center_title_bar">@Model.Name</div>
+    <div class="prod_box_big">
+        <div class="top_prod_box_big"></div>
+        <div class="center_prod_box_big">
+            <div class="product_img_big">
+                <a href="javascript:popImage('~/images/big_pic.jpg','Some Title')" title="header=[@Model.Name] body=[&nbsp;] fade=[on]"><img src="@Url.Content("~/Images/uploads/img_"+Model.Path+"_0.jpg")"height="300" width="300" alt="" border="0" /></a>
+                <div class="thumbs"> <a href="#" title="header=[@Model.Name] body=[&nbsp;] fade=[on]"><img src="@Url.Content("~/Images/uploads/img_"+Model.Path+"_1.jpg")" alt="" border="0" height="50" width="50"/></a> <a href="#" title="header=[@Model.Name] body=[&nbsp;] fade=[on]"><img src="@Url.Content("~/Images/uploads/img_"+Model.Path+"_2.jpg")" alt="" border="0" height="50" width="50"/></a> <a href="#" title="header=[@Model.Name] body=[&nbsp;] fade=[on]"><img src="@Url.Content("~/Images/uploads/img_"+Model.Path+"_3.jpg")" alt="" border="0" height="50" width="50"/></a> </div>
+            </div>
+            <div class="details_big_box">
+                <br />
+                <div class="product_title_big">@Model.Name</div>
+                <div class="specifications">
+                    <br />
+                    Category: <span class="blue">@Model.Category1</span><br />
+                    Brand: <span class="blue">@Model.Brand1</span><br />
+                    Description: <span class="blue">@Model.Description</span><br />
+                    Price: <span class="blue">@Model.Price</span><br />
+                </div>
+                <div class="prod_price_big"><span class="reduce">Rs.@(Model.Price+30)</span> <span class="price">Rs.@Model.Price</span></div>
+                <br />
+                <a href="~/Account/AddToCart/@Model.Id" class="addtocart" style="border:solid;background-color:firebrick;color:white ; border-color:firebrick; border-radius:5px ; width:150px; border-color:firebrick; text-align:left">Add to Cart</a>
+            </div>
+        </div>
+        <div class="bottom_prod_box_big"></div>
+    </div>
+</div>
+@section Cart{
+    <div class="shopping_cart">
+        <div class="cart_title">Shopping Cart</div>
+        <div class="cart_details" id="number">
+            <p id="ti">@TempData["Items"]</p><br />
+            <span class="border_cart"></span><p id="tp">Total: @TempData["Total"] </p> <span class="price" id="sum"></span>
+        </div>
+        <div class="cart_icon"><a href="~/Account/Checkout" title="header=[shop now] body=[&nbsp;] fade=[on]"><img src="~/images/shoppingcart.png" alt="" width="48" height="48" border="0" /></a></div>
+    </div>
+}
+
+
+
+

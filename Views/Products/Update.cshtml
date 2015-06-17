@@ -1,0 +1,89 @@
+﻿@model MvcApplication4.Models.Product
+@{
+    ViewBag.Title = "Update";
+}
+@{
+    Layout = "~/views/Shared/_LAdmin.cshtml";
+}
+<div class="center_content12" style="display:table-cell; padding-left:200px ;width:585px;float:left;padding:5px 10px;">
+    <div class="title_bar" style=" font-weight:bolder; color:firebrick; text-align:center; opacity:0.4"><h1>Update Product</h1></div>
+<form method="post" action="/Products/UpdateConfirm/@Model.Id">
+    <table style="nav-left:auto">
+        <tr>
+            <td>Name</td>
+            <td><input type="text" value="@Model.Name" name="Name" required /></td>
+        </tr>
+        <tr>
+            <td>
+                Category
+            </td>
+            <td>
+
+                <select id="Clist" name="Cat">
+                    <option value="Processors" selected id="Processors">Processors</option>
+                    <option id="Motherboard" value="Motherboard">Motherboard</option>
+                    <option id="Desktop" value="Desktop">Desktop</option>
+                    <option id="Laptop" value="Laptop">Laptop</option>
+                    <option id="Others" value="Others">Others</option>
+                </select>
+
+            </td>
+</tr>
+        <tr>
+            <td>
+                Brand
+            </td>
+            <td>
+
+                <select id="Blist" name="Bran">
+                    <option value="Sony" id="Sony" selected>Sony</option>
+                    <option value="Samsung" id="Samsung">Samsung</option>
+                    <option value="Daewoo" id="Daewoo">Daewoo</option>
+                    <option value="LG" id="LG">LG</option>
+                    <option value="Fajistu" id="Fajistu">Fajistu</option>
+                    <option value="Motorlla" id="Motorlla">Motorola</option>
+                    <option value="Phillips" id="Phillips">Phillips</option>
+                    <option value="Beko" id="Beko">Beko</option>
+                    <option value="Others" id="Others">Others</option>
+                </select>
+
+            </td>
+</tr>
+        <tr>
+            <td>
+                Description
+            </td>
+            <td><input type="text" value="@Model.Description" name="Description" required/></td>
+</tr>
+        <tr>
+            <td>
+                Price
+            </td>
+            <td> <input type="number" value="@Model.Price" name="Price" required /></td>
+</tr>
+        <tr>
+            <td><input type="submit" value="Update" /></td>
+</tr>
+    </table>
+</form>
+    <script>
+        $(document).ready(function () {
+            $('#Clist option').remove();
+            $.getJSON('/Products/returnCategories', function (data) {
+                $('#Clist').append("<option>-Select Category-</option>");
+                $.each(data, function (i, item) {
+                    $('#Clist').append("<option id= " + item.Name + " value= " + item.Name + ">" + item.Name + "</option>");
+                });
+            });
+
+
+            $('#Blist option').remove();
+            $.getJSON('/Products/returnBrands', function (data) {
+                $('#Blist').append("<option>-Select Brand-</option>");
+                $.each(data, function (i, item) {
+                    $('#Blist').append("<option id= " + item.Name + " value= " + item.Name + ">" + item.Name + "</option>");
+                });
+            });
+        });
+    </script>
+</div>
